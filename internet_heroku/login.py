@@ -5,7 +5,7 @@ import time
 def find_elements(driver):
   username = driver.find_element("id", "username")
   password = driver.find_element("id", "password")
-  radius = driver.find_element(By.CSS_SELECTOR, "button.radius")
+  radius = driver.find_element(By.CSS_SELECTOR, "#login > button")
 
   return username, password, radius
 
