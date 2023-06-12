@@ -5,7 +5,7 @@ import time
 def find_elements(driver):
   username = driver.find_element("id", "username")
   password = driver.find_element("id", "password")
-  radius = driver.find_element(By.CLASS_NAME, "radius")
+  radius = driver.find_element(By.CSS_SELECTOR, "button.radius")
 
   return username, password, radius
 
@@ -20,15 +20,8 @@ driver.get("https://the-internet.herokuapp.com/login")
 username, password, radius = find_elements(driver)
 perform_first_task(username, password, radius)
 
-# elements (multiple)
 h2 = driver.find_elements(By.TAG_NAME, "h2")
 print(h2)
 
-# can also use By.LINK_TEXT
-# driver.find_element(By.PARTIAL_LINK_TEXT, "Elemental").click()
-
-# Wait for user input before closing the browser window
 input("Press Enter to quit")
-
-# Quit the browser
 driver.quit()
