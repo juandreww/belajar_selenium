@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 
 def find_elements(driver):
-  username  = driver.find_element("id", "username")
+  username = driver.find_element("id", "username")
   password = driver.find_element("id", "password")
   radius = driver.find_element(By.CLASS_NAME, "radius")
 
@@ -14,17 +14,11 @@ def perform_first_task(username, password, radius):
   password.send_keys("belajar_itu_menyenangkan")
   radius.click()
 
-def perform_clear_keys(username, password):
-  username.clear()
-  password.clear()
-
 driver = webdriver.Chrome()
 driver.get("https://the-internet.herokuapp.com/login")
 
 username, password, radius = find_elements(driver)
 perform_first_task(username, password, radius)
-time.sleep(3)
-perform_clear_keys(username, password)
 
 # elements (multiple)
 h2 = driver.find_elements(By.TAG_NAME, "h2")
